@@ -177,9 +177,9 @@ const Header = () => {
                     icon={<BtnArrowIcon />}
                   />
                 </div>
-                <div>
+                {/* <div>
                   <ThemeToggler />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

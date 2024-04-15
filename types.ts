@@ -1,3 +1,4 @@
+// types.ts
 type Base = {
   _createdAt: string;
   _id: string;
@@ -16,44 +17,55 @@ export interface Post extends Base {
   description: string;
 }
 
-interface Author extends Base {
+export interface Author extends Base {
   description: string;
   image: Image;
   name: string;
   slug: Slug;
 }
 
-interface Image {
+export interface Image {
   _type: 'image';
   asset: Reference;
 }
 
-interface Reference {
+export interface Reference {
   _type: 'slug';
   current: string;
 }
 
-interface Slug {
+export interface Slug {
   _type: 'slug';
   current: string;
 }
 
-interface Block {
+export interface Block {
   _key: string;
   _type: 'block';
   children: Span[];
   markDefs: any[];
-  style: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'bloackquote';
+  style: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote';
 }
 
-interface Span {
+export interface Span {
   _key: string;
   _type: 'span';
   marks: string[];
   text: string;
 }
 
-interface Category extends Base {
+export interface Category extends Base {
   description: string;
   title: string;
+}
+
+export interface Property extends Base {
+  title: string;
+  propertyType: string;
+  propertyImage: Image;
+  location: string;
+  propertySize: string;
+  budget: number;
+  slug?: Slug;
+  description: string;
 }

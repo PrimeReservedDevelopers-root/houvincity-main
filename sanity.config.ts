@@ -9,8 +9,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig({
   basePath: '/studio',
-  name: 'Bloggers_Studio',
-  title: 'Bloggers Studio',
+  name: 'PrimeReserved_Studio',
+  title: 'PrimeReserved Backend Studio',
   projectId,
   dataset,
   plugins: [deskTool(), visionTool()],

@@ -6,7 +6,7 @@ import IconButtonHref from '../Buttons/IconButtonHref';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-center bg-cover mt-20 md:mt-[7.3rem] py-20 md:py-28">
+    <section className="relative w-full overflow-hidden bg-center bg-cover mt-28 md:mt-[7.3rem] py-20 md:py-28">
       {/* Background Image */}
       <Image
         src="/images/banners/real estate blog 2.jpg"

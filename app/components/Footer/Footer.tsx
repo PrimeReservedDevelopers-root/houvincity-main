@@ -29,9 +29,11 @@ const Footer = () => {
                 />
               </Link>
               <p className="dark:text-white-dark mb-9 text-base font-light leading-relaxed text-white">
-                The seasoned Software Development Agency specialized in building
-                cutting-edge, user-focused digital solutions tailored for
-                businesses of all sizes, from startups to enterprises.
+                Your Trusted Partner in Real Estate Excellence. Unlock your
+                dream home with our dedicated team, offering tailored solutions
+                for every property journey. From starter homes to luxury
+                estates, we&lsquo;re committed to making your real estate
+                experience seamless and rewarding.
               </p>
 
               <IconButtonHref
