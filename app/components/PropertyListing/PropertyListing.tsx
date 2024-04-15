@@ -123,7 +123,7 @@ const PropertyListing = () => {
             <p className="text-gray-600 mb-2">${property.budget}</p>
             <p className="text-gray-600 mb-2">{property.description}</p>
             {/* View full details button */}
-            <Link href={`/property/${property.slug?.current || ''}`}>
+            <Link href={`/listing/${property.slug?.current}`}>
               <span className="bg-primary text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200">
                 View Full Details
               </span>
