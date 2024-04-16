@@ -51,7 +51,7 @@ const Header = () => {
         }`}
       >
         <div className="container">
-          <div className="relative -mx-4 flex items-center justify-between">
+          <div className="relative flex items-center justify-between">
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link
                 href="/"
@@ -107,7 +107,7 @@ const Header = () => {
                       : 'invisible top-[120%] opacity-0'
                   }`}
                 >
-                  <ul className="block lg:flex lg:space-x-12">
+                  <ul className="block lg:flex xl:space-x-[5rem] lg:space-x-10 ">
                     {menuData.map((menuItem, index) => (
                       <li key={index} className="group relative">
                         {menuItem.path ? (
@@ -172,9 +172,8 @@ const Header = () => {
               <div className="flex items-center justify-end gap-4 pr-16 lg:pr-0">
                 <div className="my-2 hidden lg:flex">
                   <IconButtonHref
-                    text="Property listing"
+                    text="Find Property"
                     href="/property"
-                    icon={<BtnArrowIcon />}
                   />
                 </div>
                 {/* <div>
