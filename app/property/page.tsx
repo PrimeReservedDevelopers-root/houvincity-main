@@ -11,10 +11,10 @@ const PropertyPage = () => {
         }}
       >
         {/* Background Image Overlay */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
           {/* Text Content */}
           <h1 className="text-4xl font-bold text-white">Property Listing</h1>
-          <p className="text-md my-6 px-8 text-center text-white md:max-w-2xl md:text-2xl">
+          <p className="text-sm my-6 px-8 text-center text-white md:max-w-2xl md:text-sm">
             Houvincity—Your Stress-free Real Estate Company!
           </p>
         </div>
