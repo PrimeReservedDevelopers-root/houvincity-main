@@ -20,7 +20,7 @@ export default defineType({
       title: 'Property Type',
       type: 'string',
       options: {
-        list: ['House', 'Land'], // Updated property types
+        list: ['House', 'Land'],
       },
     }),
     defineField({
@@ -36,18 +36,28 @@ export default defineType({
       title: 'Location',
       type: 'string',
       options: {
-        list: ['Port Harcourt', 'Lagos', 'Abuja'], // Updated property types
+        list: ['Port Harcourt', 'Lagos', 'Abuja'],
       },
     }),
     defineField({
       name: 'propertySize',
       title: 'Property Size',
       type: 'string',
+      options: {
+        list: ['500m² - 5,000m²', '5000m² - 10,000m²', '10,000m² - 20,000m²'],
+      },
     }),
     defineField({
       name: 'budget',
       title: 'Budget',
-      type: 'number',
+      type: 'string',
+      options: {
+        list: [
+          '₦(10 Million to 50 Million)',
+          '₦(50 Million to 100 Million)',
+          '₦(100 Million to 200 Million)',
+        ],
+      },
     }),
     defineField({
       name: 'slug',

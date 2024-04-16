@@ -10,6 +10,8 @@ const PropertyListing = () => {
   const [filteredProperties, setFilteredProperties] = useState<Property[]>([]);
   const [searchType, setSearchType] = useState('');
   const [searchLocation, setSearchLocation] = useState('');
+  const [searchSize, setSearchSize] = useState('');
+  const [searchBudget, setSearchBudget] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [propertiesPerPage] = useState(6);
 
@@ -36,10 +38,18 @@ const PropertyListing = () => {
       query += groq` && location == $location`;
       params.location = searchLocation;
     }
+    if (searchSize) {
+      query += groq` && propertySize == $propertySize`;
+      params.propertySize = searchSize;
+    }
+    if (searchBudget) {
+      query += groq` && budget == $budget`;
+      params.budget = searchBudget;
+    }
 
     const properties: Property[] = await client.fetch(query, params);
-    setFilteredProperties(properties || []); // Ensure filteredProperties is always an array
-    setCurrentPage(1); // Reset to first page after search
+    setFilteredProperties(properties || []);
+    setCurrentPage(1);
   };
 
   const indexOfLastProperty = currentPage * propertiesPerPage;
@@ -78,6 +88,36 @@ const PropertyListing = () => {
           <option value="Abuja">Abuja</option>
         </select>
 
+        {/* Property Size dropdown */}
+        <select
+          value={searchSize}
+          onChange={(e) => setSearchSize(e.target.value)}
+          className="w-full md:w-auto border border-gray-300 rounded-md py-2 px-4"
+        >
+          <option value="">Property Size</option>
+          <option value="500m² - 5,000m²">500m² - 5,000m²</option>
+          <option value="5,000m² - 10,000m²">5,000m² - 10,000m²</option>
+          <option value="10,000m² - 20,000m²">10,000m² - 20,000m²</option>
+        </select>
+
+        {/* Budget dropdown */}
+        <select
+          value={searchBudget}
+          onChange={(e) => setSearchBudget(e.target.value)}
+          className="w-full md:w-auto border border-gray-300 rounded-md py-2 px-4"
+        >
+          <option value="">Budget</option>
+          <option value="₦(10 Million to 50 Million)">
+            ₦(10 Million to 50 Million)
+          </option>
+          <option value="₦(50 Million to 100 Million)">
+            ₦(50 Million to 100 Million)
+          </option>
+          <option value="₦(100 Million to 200 Million)">
+            ₦(100 Million to 200 Million)
+          </option>
+        </select>
+
         {/* Search button */}
         <button
           onClick={handleSearch}
@@ -91,6 +131,8 @@ const PropertyListing = () => {
           onClick={() => {
             setSearchType('');
             setSearchLocation('');
+            setSearchSize('');
+            setSearchBudget('');
             fetchProperties(); // Fetch all properties
           }}
           className="bg-primary text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
@@ -120,7 +162,7 @@ const PropertyListing = () => {
             <h2 className="text-xl font-bold mb-2">{property.title}</h2>
             <p className="text-gray-600 mb-2">{property.location}</p>
             <p className="text-gray-600 mb-2">{property.propertySize}</p>
-            <p className="text-gray-600 mb-2">${property.budget}</p>
+            <p className="text-gray-600 mb-2">{property.budget}</p>
             <p className="text-gray-600 mb-2">{property.description}</p>
             {/* View full details button */}
             <Link href={`/listing/${property.slug?.current}`}>
@@ -158,10 +200,10 @@ const PropertyListing = () => {
       )}
 
       {/* Other buttons */}
-      <div className="flex justify-center mt-8 space-x-4">
+      <div className="flex justify-center mt-8 space-x-4 flex-col md:flex-row">
         {/* Check out other services button */}
         <Link href="/services">
-          <span className="bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded">
+          <span className="bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded md:mr-4">
             Check out our other services
           </span>
         </Link>
