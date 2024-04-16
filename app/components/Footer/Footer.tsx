@@ -2,17 +2,23 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import BtnArrowIcon from '../Buttons/BtnArrowIcon';
 import IconButtonHref from '../Buttons/IconButtonHref';
+const getCurrentYear = () => {
+  return new Date().getFullYear();
+};
 
-const Footer = () => {
+const FooterHome = () => {
   return (
     <footer className="relative z-10 bg-customSecondary pt-16 dark:bg-customDarkBg md:pt-20 lg:pt-24">
       <div className="container">
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4 md:w-1/2 lg:w-6/12 xl:w-6/12">
-            <div className="mb-12 max-w-[95%] md:max-w-[85%] lg:mb-16">
-              <Link href="/" className="mb-8 inline-block">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className=" ">
+            {/* intro */}
+            <div className=" pl-4">
+              <div className="mb-12 lg:mb-16">
+                <Link href="/" className="mb-8 inline-block">
                 <Image
                   src="/images/logo/logo.svg"
                   alt="logo"
@@ -27,34 +33,46 @@ const Footer = () => {
                   width={140}
                   height={30}
                 />
-              </Link>
-              <p className="dark:text-white-dark mb-9 text-base font-light leading-relaxed text-white">
-                Your Trusted Partner in Real Estate Excellence. Unlock your
-                dream home with our dedicated team, offering tailored solutions
-                for every property journey. From starter homes to luxury
-                estates, we&lsquo;re committed to making your real estate
-                experience seamless and rewarding.
-              </p>
+                </Link>
+                <p className="dark:text-white-dark mb-9 md:text-[14px] text-[14px] font-light leading-loose text-white px-4 w-[100%]  md:w-[100%] lg:w-[75%] mt-2">
+                  Your Trusted Partner in Real Estate Excellence. Unlock your
+                  dream home with our dedicated team, offering tailored
+                  solutions for every property journey. From starter homes to
+                  luxury estates, we&lsquo;re committed to making your real
+                  estate experience seamless and rewarding.
+                </p>
+              </div>
+              {/* Contact Us Section */}
+              <div className="w-[100%] pl-4 mb-12 max-w-[95%] md:max-w-[85%] lg:mb-16 -mt-4">
+                <div className="dark:text-white-dark mb-9 text-[14px] font-light leading-relaxed text-white">
+                  <h1 className="text-[18px] ">Contact Us:</h1>
+                  <p className="pt-3">Phone Number: +2348034652178</p>
+                  <p className="py-2">
+                    Address: 31C Rumuola Road by Rumuola Junction.
+                  </p>
+                  <p className="pt">Email: info@houvincityltd.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-              <IconButtonHref
-                text="Contact Us"
-                href="/property"
-                icon={<BtnArrowIcon />}
-              />
+          <div className="">
+            <div className="flex md:space-x-[12rem] justify-between md:justify-normal px-8">
+              <QuickLinks />
+              <Services />
+            </div>
 
-              <div className="mt-8 hidden items-center md:flex">
-                <span className="text-md mr-2 text-white lg:mr-6 lg:text-2xl">
-                  Follow Us
-                </span>
+            {/* Social Media Links */}
+            <div className=" md:hidden border-t-[1px] "></div>
+            <div className="flex md:-mt-6 md:ml-7 my-6 items-center  md:justify-normal justify-center gap-10 md:gap-0">
+              <span className="md:text-[20px] text-[14px] text-white md:mr-10">
+                Follow Us
+              </span>
+              <div className="flex md:space-x-14">
                 <SocialLink
                   href="https://www.linkedin.com/company/primereserved"
-                  image="/images/icons/linkedIn-logo.svg"
-                  alt="LinkedIn"
-                />
-                <SocialLink
-                  href="https://www.youtube.com/@primereservedtech"
-                  image="/images/icons/youtube-logo.svg"
-                  alt="Youtube"
+                  image="/images/icons/ig-logo.svg"
+                  alt="Instagram"
                 />
                 <SocialLink
                   href="https://www.instagram.com/primereservedtech"
@@ -66,41 +84,17 @@ const Footer = () => {
                   image="/images/icons/fb-logo.svg"
                   alt="Facebook"
                 />
+                <SocialLink
+                  href="https://www.youtube.com/@primereservedtech"
+                  image="/images/icons/youtube-logo.svg"
+                  alt="Youtube"
+                />
               </div>
             </div>
           </div>
-
-          <div className="sm:w-2/2 flex w-full flex-wrap justify-between px-4 md:w-1/2 lg:w-5/12 xl:w-5/12">
-            <QuickLinks />
-            <Services />
-          </div>
         </div>
-        <hr className="h-px w-full bg-[#D2D8E183] xs:flex md:hidden" />
 
-        <div className="my-4 flex items-center justify-center xs:flex md:hidden">
-          <span className="text-md mr-6 text-white">Follow Us</span>
-          <SocialLink
-            href="https://www.linkedin.com/company/primereserved"
-            image="/images/icons/linkedIn-logo.svg"
-            alt="LinkedIn"
-          />
-          <SocialLink
-            href="https://www.youtube.com/@primereservedtech"
-            image="/images/icons/youtube-logo.svg"
-            alt="Youtube"
-          />
-          <SocialLink
-            href="https://www.instagram.com/primereservedtech"
-            image="/images/icons/ig-logo.svg"
-            alt="Instagram"
-          />
-          <SocialLink
-            href="https://www.facebook.com/groups/1554028415142497/"
-            image="/images/icons/fb-logo.svg"
-            alt="Facebook"
-          />
-        </div>
-        <hr className="h-px w-full bg-[#D2D8E183]" />
+        <div className=" border-t-[1px] "></div>
 
         <Copyright />
 
@@ -124,10 +118,11 @@ const SocialLink: React.FC<{ href: string; image: string; alt: string }> = ({
   </a>
 );
 
+
 const QuickLinks = () => (
   <div className="mb-12 lg:mb-16">
     <h2 className="mb-10 text-2xl font-semibold text-white dark:text-white">
-      QUICK LINKS
+      NAVIGATION
     </h2>
     <ul>
       <li>
@@ -140,10 +135,10 @@ const QuickLinks = () => (
       </li>
       <li>
         <Link
-          href="/about"
+          href="/property"
           className="dark:text-white-dark mb-4 inline-block text-base font-light text-white duration-300 hover:text-primary dark:hover:text-primary"
         >
-          About us
+          Property
         </Link>
       </li>
       <li>
@@ -156,10 +151,18 @@ const QuickLinks = () => (
       </li>
       <li>
         <Link
-          href="/team"
+          href="/about"
           className="dark:text-white-dark mb-4 inline-block text-base font-light text-white duration-300 hover:text-primary dark:hover:text-primary"
         >
-          Meet the team
+          About
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="/blog"
+          className="dark:text-white-dark mb-4 inline-block text-base font-light text-white duration-300 hover:text-primary dark:hover:text-primary"
+        >
+          Blog
         </Link>
       </li>
     </ul>
@@ -169,7 +172,7 @@ const QuickLinks = () => (
 const Services = () => (
   <div className="mb-12 mr-4 lg:mb-16 lg:mr-2">
     <h2 className="mb-10 text-2xl font-semibold text-white dark:text-white">
-      SERVICES
+      SUPPORT
     </h2>
     <ul>
       <li>
@@ -177,47 +180,23 @@ const Services = () => (
           href="/services#webDevelopment"
           className="dark:text-white-dark mb-4 inline-block text-base font-light text-white duration-300 hover:text-primary dark:hover:text-primary"
         >
-          Web Development
+          Contact Us
         </Link>
       </li>
       <li>
         <Link
-          href="/services#webDesign"
+          href="/faqs"
           className="dark:text-white-dark mb-4 inline-block text-base font-light text-white duration-300 hover:text-primary dark:hover:text-primary"
         >
-          Web Design
+          FAQS
         </Link>
       </li>
       <li>
         <Link
-          href="/services#mobileDevelopment"
+          href="/privacy"
           className="dark:text-white-dark mb-4 inline-block text-base font-light text-white duration-300 hover:text-primary dark:hover:text-primary"
         >
-          Mobile Development
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="/services#teamTraining"
-          className="dark:text-white-dark mb-4 inline-block text-base font-light text-white duration-300 hover:text-primary dark:hover:text-primary"
-        >
-          Team Training
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="/services#securityAudits"
-          className="dark:text-white-dark mb-4 inline-block text-base font-light text-white duration-300 hover:text-primary dark:hover:text-primary"
-        >
-          Security Audits
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="/services#technicalSupport"
-          className="dark:text-white-dark mb-4 inline-block text-base font-light text-white duration-300 hover:text-primary dark:hover:text-primary"
-        >
-          Technical Support
+          Privacy Policy
         </Link>
       </li>
     </ul>
@@ -225,19 +204,25 @@ const Services = () => (
 );
 
 const Copyright = () => (
-  <div className="items-center justify-between py-8 font-light md:flex">
-    <p className="text-center text-base text-white dark:text-white">
-      Copyright © 2024 PrimeReserved. All rights reserved
+  <div className="items-center justify-center py-8 font-light flex">
+    <p className=" text-[14px] md:text-base text-white dark:text-white">
+      Copyright © {getCurrentYear()} PrimeReserved. All rights reserved.
     </p>
-    <div className="flex items-center justify-center gap-8">
-      <Link href="/terms" className="text-base text-white dark:text-white">
-        Terms and Conditions
-      </Link>
-      <Link href="/privacy" className="text-base text-white dark:text-white">
-        Privacy Policy
-      </Link>
-    </div>
   </div>
 );
 
-export default Footer;
+export default FooterHome;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
