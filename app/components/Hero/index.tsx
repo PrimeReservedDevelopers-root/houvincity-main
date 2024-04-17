@@ -1,8 +1,8 @@
 import React from 'react';
-import { BiRocket } from 'react-icons/bi';
 import Image from 'next/image';
-import BtnArrowIcon from '../Buttons/BtnArrowIcon';
 import IconButtonHref from '../Buttons/IconButtonHref';
+import SearchHomePage from '../Search/SearchHomePage';
+import SearchOther from '../Search/SearchOther';
 
 const Hero: React.FC = () => {
   return (
@@ -36,12 +36,13 @@ const Hero: React.FC = () => {
           </p>
           {/* Contact Button */}
           <IconButtonHref
-            text="Property listing"
+            text="Find Property"
             href="/property"
-            icon={<BtnArrowIcon />}
           />
         </div>
       </div>
+      <SearchHomePage />
+
     </section>
   );
 };
