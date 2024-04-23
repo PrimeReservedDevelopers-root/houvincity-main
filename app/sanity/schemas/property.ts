@@ -11,17 +11,18 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'string',
-    }),
-    defineField({
-      name: 'propertyType',
-      title: 'Property Type',
-      type: 'string',
-      options: {
-        list: ['House', 'Land'],
-      },
     }),
     defineField({
       name: 'propertyImage',
@@ -29,6 +30,38 @@ export default defineType({
       type: 'image',
       options: {
         hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'propertyImageOne',
+      title: 'Property Image One',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'propertyImageTwo',
+      title: 'Property Image Two',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'propertyImageThree',
+      title: 'Property Image Three',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'propertyType',
+      title: 'Property Type',
+      type: 'string',
+      options: {
+        list: ['House', 'Land'],
       },
     }),
     defineField({
@@ -60,13 +93,29 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+      name: 'price',
+      title: 'Price',
+      type: 'string',
+    }),
+    defineField({
+      name: 'legal',
+      title: 'Legal',
+      type: 'string',
+    }),
+    defineField({
+      name: 'currentPropertySize',
+      title: 'Current Property Size',
+      type: 'string',
+    }),
+    defineField({
+      name: 'promoVideo',
+      title: 'Promo Video',
+      type: 'url',
+    }),
+    defineField({
+      name: 'virtualSiteUrl',
+      title: 'Virtual Site Inspection URL',
+      type: 'url',
     }),
     defineField({
       name: 'body',
