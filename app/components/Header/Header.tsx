@@ -171,10 +171,7 @@ const Header = () => {
               </div>
               <div className="flex items-center justify-end gap-4 pr-16 lg:pr-0">
                 <div className="my-2 hidden lg:flex">
-                  <IconButtonHref
-                    text="Find Property"
-                    href="/property"
-                  />
+                  <IconButtonHref text="Watch Live" href="/livestream" />
                 </div>
                 {/* <div>
                   <ThemeToggler />
