@@ -1,11 +1,12 @@
-import Hero from "./components/Hero";
-import AboutProperty from "./components/LandingPage/AboutProperty";
-import BlogHomePage from "./components/LandingPage/BlogHomePage";
-import Card from "./components/LandingPage/Card";
-import Review from "./components/LandingPage/Review";
-import Newsletter from "./components/NewsLetter/Newletter";
-import { client } from "./lib/createClient";
-import { groq } from "next-sanity";
+import Hero from './components/Hero';
+import AboutProperty from './components/LandingPage/AboutProperty';
+import BlogHomePage from './components/LandingPage/BlogHomePage';
+import Card from './components/LandingPage/Card';
+import Review from './components/LandingPage/Review';
+import MailchimpNewsletter from './components/NewsLetter/MailchimpNewsletter';
+import Newsletter from './components/NewsLetter/Newletter';
+import { client } from './lib/createClient';
+import { groq } from 'next-sanity';
 
 export const revalidate = 30;
 const query = groq`*[_type == 'post']{
@@ -52,7 +53,7 @@ export default async function Home() {
 
       <BlogHomePage posts={posts} />
       <Review />
-      <Newsletter />
+      <MailchimpNewsletter />
     </main>
   );
 }
