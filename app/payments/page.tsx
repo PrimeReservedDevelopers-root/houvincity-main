@@ -18,6 +18,10 @@ const PaymentsPage = () => {
     setAmount(Number(amountFromParam) * 100); // Convert to kobo and set as amount
   }, []); // Run only once on component mount
 
+  // Get amount from query param
+  const urlParams = new URLSearchParams(window.location.search);
+  const plotAmount = urlParams.get('amount') || '';
+
   const componentProps = {
     email,
     amount,
