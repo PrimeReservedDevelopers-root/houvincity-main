@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PaystackButton } from 'react-paystack';
 
 const PaymentsPage = () => {
@@ -9,10 +9,14 @@ const PaymentsPage = () => {
   const [phone, setPhone] = useState('');
   const [company, setCompany] = useState('');
   const [address, setAddress] = useState('');
+  const [plotAmount, setPlotAmount] = useState('');
 
-  // Get amount from query param
-  const urlParams = new URLSearchParams(window.location.search);
-  const plotAmount = urlParams.get('amount') || '';
+  useEffect(() => {
+    // Get amount from query param
+    const urlParams = new URLSearchParams(window.location.search);
+    const amount = urlParams.get('amount') || '';
+    setPlotAmount(amount);
+  }, []); // Run only once on component mount
 
   const componentProps = {
     email,
