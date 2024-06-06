@@ -18,6 +18,10 @@ const PaymentsPage = () => {
     setPlotAmount(amount);
   }, []); // Run only once on component mount
 
+  // Get amount from query param
+  const urlParams = new URLSearchParams(window.location.search);
+  const plotAmount = urlParams.get('amount') || '';
+
   const componentProps = {
     email,
     amount: Number(plotAmount) * 100, // Convert plot amount to kobo (100 kobo = 1 naira)
