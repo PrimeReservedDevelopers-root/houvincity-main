@@ -9,18 +9,18 @@ const PaymentsPage = () => {
   const [phone, setPhone] = useState('');
   const [company, setCompany] = useState('');
   const [address, setAddress] = useState('');
-  const [plotAmount, setPlotAmount] = useState('');
+  const [amount, setAmount] = useState(0); // Initialize with a default value
 
   useEffect(() => {
     // Get amount from query param
     const urlParams = new URLSearchParams(window.location.search);
-    const amount = urlParams.get('amount') || '';
-    setPlotAmount(amount);
+    const amountFromParam = urlParams.get('amount') || '';
+    setAmount(Number(amountFromParam) * 100); // Convert to kobo and set as amount
   }, []); // Run only once on component mount
 
   const componentProps = {
     email,
-    amount: Number(plotAmount) * 100, // Convert plot amount to kobo (100 kobo = 1 naira)
+    amount,
     metadata: {
       custom_fields: [
         { display_name: 'Name', variable_name: 'name', value: name },
@@ -79,7 +79,7 @@ const PaymentsPage = () => {
           type="number"
           placeholder="Amount (NGN)"
           className={styles.input}
-          value={plotAmount}
+          value={amount / 100} // Display amount in naira instead of kobo
           readOnly // Prevent user input
           required
         />
