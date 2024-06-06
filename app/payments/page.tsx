@@ -1,25 +1,27 @@
 'use client';
-
 import React, { useState } from 'react';
 import { PaystackButton } from 'react-paystack';
 
 const PaymentsPage = () => {
   const publicKey = 'pk_test_e33df513bcf2d1fd7affd081e4e4076acf94f3ed'; // Replace with your actual test key
   const [email, setEmail] = useState('');
-  const [amount, setAmount] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [company, setCompany] = useState(''); // Added Company field
+  const [company, setCompany] = useState('');
   const [address, setAddress] = useState('');
+
+  // Get amount from query param
+  const urlParams = new URLSearchParams(window.location.search);
+  const plotAmount = urlParams.get('amount') || '';
 
   const componentProps = {
     email,
-    amount: Number(amount) * 100,
+    amount: Number(plotAmount) * 100, // Convert plot amount to kobo (100 kobo = 1 naira)
     metadata: {
       custom_fields: [
         { display_name: 'Name', variable_name: 'name', value: name },
         { display_name: 'Phone', variable_name: 'phone', value: phone },
-        { display_name: 'Company', variable_name: 'company', value: company }, // Added Company field
+        { display_name: 'Company', variable_name: 'company', value: company },
         { display_name: 'Address', variable_name: 'address', value: address },
       ],
     },
@@ -46,7 +48,6 @@ const PaymentsPage = () => {
     <div className={styles.container}>
       <div className={styles.form}>
         <h1 className={styles.heading}>Make Your Payment</h1>
-
         <input
           type="text"
           placeholder="Full Name"
@@ -74,8 +75,8 @@ const PaymentsPage = () => {
           type="number"
           placeholder="Amount (NGN)"
           className={styles.input}
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+          value={plotAmount}
+          readOnly // Prevent user input
           required
         />
         <input

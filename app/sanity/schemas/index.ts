@@ -2,6 +2,14 @@ import blockContent from './blockContent';
 import category from './category';
 import post from './post';
 import author from './author';
-import property from './property'; // Import Property schema
+import property from './property';
+import upcomingEvent from './upcomingEvent';
 
-export const schemaTypes = [post, author, category, blockContent, property]; // Include Property schema in schemaTypes array
+export const schemaTypes = [
+  post,
+  author,
+  category,
+  blockContent,
+  property,
+  upcomingEvent,
+];

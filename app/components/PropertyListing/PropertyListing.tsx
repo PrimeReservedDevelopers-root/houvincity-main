@@ -217,7 +217,19 @@ const PropertyListing = () => {
               <div className="mt-2 flex justify-between">
                 <p className="text-black font-semibold ">{property.budget}</p>
                 {/* <p className="text-gray-600 mb-2">{property.description}</p> */}
-                <Link href={`/listing/${property.slug?.current}`}>
+                {/* <Link href={`/listing/${property.slug?.current}`}>
+                  <button className="text-white bg-primary text-base px-3 py-2 -mr-5 rounded-br-md">
+                    View Full Details
+                  </button>
+                </Link> */}
+
+                <Link
+                  href={
+                    property.propertyType === 'Land'
+                      ? `/listingLand/${property.slug?.current}`
+                      : `/listing/${property.slug?.current}`
+                  }
+                >
                   <button className="text-white bg-primary text-base px-3 py-2 -mr-5 rounded-br-md">
                     View Full Details
                   </button>

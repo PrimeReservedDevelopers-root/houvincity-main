@@ -1,4 +1,5 @@
-// types.ts
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+
 type Base = {
   _createdAt: string;
   _id: string;
@@ -68,4 +69,20 @@ export interface Property extends Base {
   budget: number;
   slug?: Slug;
   description: string;
+}
+
+export interface UpcomingEvent {
+  _id: string;
+  title: string;
+  description: string;
+  date: string;
+  thumbnail: {
+    asset: SanityImageSource;
+  };
+}
+
+export interface PlotOption extends Base {
+  plotDetails: string;
+  amount: number;
+  purchased: boolean;
 }
