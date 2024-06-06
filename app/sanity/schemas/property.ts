@@ -122,6 +122,21 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'plots',
+      title: 'Plots',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'size', title: 'Plot Size', type: 'string' },
+            { name: 'amount', title: 'Plot Amount', type: 'number' },
+            { name: 'purchased', title: 'Purchased', type: 'boolean' },
+          ],
+        },
+      ],
+    }),
   ],
 
   preview: {

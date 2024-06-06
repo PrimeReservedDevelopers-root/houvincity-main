@@ -27,7 +27,7 @@ export const generateStaticParams = async () => {
   }));
 };
 
-const ListingPostSlugPage = async ({ params: { slug } }: Props) => {
+const HousePage = async ({ params: { slug } }: Props) => {
   const query = groq`*[_type == 'property' && slug.current == $slug][0]{
     ...,
     body,
@@ -121,4 +121,4 @@ const ListingPostSlugPage = async ({ params: { slug } }: Props) => {
   );
 };
 
-export default ListingPostSlugPage;
+export default HousePage;
