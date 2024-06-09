@@ -33,11 +33,11 @@ const BlogHomePage = ({ posts }: Props) => {
   );
 
   return (
-    <div className="wrapper flex justify-center items-center  mb-[5rem] ">
+    <div className="mx-5 md:mx-10 flex justify-center items-center  mb-[5rem] ">
 
       <div className="flex flex-col items-center mt-10"> 
-        <h1 className="text-customSecondary text-4xl font-semibold">Stay Updated from Our Blog</h1>
-        <p className="font-semibold text-base text-customTextColor mt-3 mb-[3rem] ">Gather Infromation From Our Blog and Stay Updated</p>
+        <h1 className="text-customSecondary text-2xl md:text-3xl font-semibold">Stay Updated from Our Blog</h1>
+        <p className="font-medium w-[300px] md:w-[100%] text-base text-customTextColor mt-3 mb-[3rem] text-center ">Gather Infromation From Our Blog and Stay Updated</p>
         <div className="mb-10 flex justify-center items-center ">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10">
             {displayedPosts.map((post, idx) => (
@@ -91,7 +91,7 @@ const BlogHomePage = ({ posts }: Props) => {
             ))}
           </div>
         </div>
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-5">
           <button className="py-3 px-[3.5rem] border-[1px] border-primary rounded-md text-xs text-primary ">
             View All
           </button>

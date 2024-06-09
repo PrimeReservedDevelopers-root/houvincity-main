@@ -1,11 +1,11 @@
 import React from "react";
 import Thick from "@/public/images/landingpage/Thick.svg";
 import Image from "next/image";
-import LuxuryHome from "@/public/images/landingpage/luxuryHome.svg";
+import LuxuryHome from "@/public/images/banners/Union.svg";
 
 function AboutProperty() {
   return (
-    <div className="wrapper my-[5rem] flex flex-col md:flex-row gap-5 items-center justify-evenly">
+    <div className="mx-6 md:mx-10 my-[5rem] flex flex-col md:flex-row gap-5 items-center justify-evenly">
       <div>
         <h1 className="font-semibold text-3xl text-customSecondary">
           Why Choose Us
@@ -17,7 +17,7 @@ function AboutProperty() {
               <h1 className="font-semibold text-xl md:text-2xl text-customSecondary">
                 Best Prices
               </h1>
-              <p className="font-semibold text-sm text-customTextColor mt-2">
+              <p className="font-medium text-sm text-customTextColor mt-2">
                 Experience the luxury of affordability with our best prices on
                 top-tier properties, making upscale living accessible to all, ur
                 commitment to competitive prices ensures...
@@ -30,7 +30,7 @@ function AboutProperty() {
               <h1 className="font-semibold text-xl md:text-2xl text-customSecondary">
                 High Quality Properties
               </h1>
-              <p className="font-semibold text-sm text-customTextColor mt-2">
+              <p className="font-medium text-sm text-customTextColor mt-2">
                 Experience the luxury of affordability with our best prices on
                 top-tier properties, making upscale living accessible to all, ur
                 commitment to competitive prices ensures...
@@ -43,7 +43,7 @@ function AboutProperty() {
               <h1 className="font-semibold text-xl md:text-2xl text-customSecondary">
                 Local Market Insight
               </h1>
-              <p className="font-semibold text-sm text-customTextColor mt-2">
+              <p className="font-medium text-sm text-customTextColor mt-2">
                 Experience the luxury of affordability with our best prices on
                 top-tier properties, making upscale living accessible to all, ur
                 commitment to competitive prices ensures...
@@ -56,7 +56,7 @@ function AboutProperty() {
               <h1 className="font-semibold text-xl md:text-2xl text-customSecondary">
                 Trusted Reputation
               </h1>
-              <p className="font-semibold text-sm text-customTextColor mt-2">
+              <p className="font-medium text-sm text-customTextColor mt-2">
                 Experience the luxury of affordability with our best prices on
                 top-tier properties, making upscale living accessible to all, ur
                 commitment to competitive prices ensures...

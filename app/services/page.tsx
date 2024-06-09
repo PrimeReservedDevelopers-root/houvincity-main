@@ -1,7 +1,8 @@
 import React from "react";
-import ContactUs from "../components/Contact/ContactUs";
+import ContactUs from "../components/Contact/Contact";
 import Service from "../components/Services/Services";
 import CustomerTestimony from "../components/Services/CustomerTestimony";
+import ServiceBox from "../components/Contact/ServiceBox";
 
 const ServicesPage = () => {
   return (
@@ -15,8 +16,8 @@ const ServicesPage = () => {
       ></div>
 
       <Service />
-      <CustomerTestimony />
-      <ContactUs />
+      {/* <CustomerTestimony /> */}
+      <ServiceBox />
     </main>
   );
 };
