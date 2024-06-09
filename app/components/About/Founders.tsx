@@ -2,7 +2,9 @@ import Image, { StaticImageData } from "next/image";
 import Founder_one from "@/public/images/about/image1.svg";
 import Founder_two from "@/public/images/about/image2.svg";
 import Founder_three from "@/public/images/about/image3.svg";
-import About_section from "@/public/images/about/image4.svg";
+import Founder_four from "@/public/images/about/image4.svg";
+
+import About_section from "@/public/images/about/image5.svg";
 
 interface Founder {
     image: StaticImageData;
@@ -12,7 +14,7 @@ interface Founder {
 
 const founders: Founder[] = [
     {
-        image: Founder_three,
+        image: Founder_one,
         name: "Emmanuel Hope. U.",
         position: "GMD/Founder"
     },
@@ -25,7 +27,13 @@ const founders: Founder[] = [
         image: Founder_three,
         name: "Enoma Osawemwenma .J",
         position: "CO-founder"
+    },
+    {
+        image: Founder_four,
+        name: "Mr Jonah Ukoh",
+        position: "Partner"
     }
+
 ];
 
 export default function Founders() {
@@ -33,14 +41,15 @@ export default function Founders() {
         <div className=" ">
             {/* Founder section  */}
             <h1 className="mt-5 text-center text-4xl text-[#040A3B] font-bold">Founders</h1>
-            <div className="lg:wrapper flex flex-col md:flex-row justify-between items-center gap-10 md:gap-2 lg:gap-10 p-10  mb-[5rem] ">
+            <div className="mx-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-10 md:gap-2 lg:gap-12 p-10  mb-[5rem] ">
                 {founders.map((founder, index) => (
                     <div className="card bg-base-100 shadow-xl" key={index}>
-                        <figure>
+                        <figure className="flex justify-center">
                             <Image
                                 src={founder.image}
                                 alt={founder.name}
                                 width={400}
+                                height={100}
                             />
                         </figure>
                         <div className="card-body text-center py-6">

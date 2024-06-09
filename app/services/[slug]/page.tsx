@@ -1,5 +1,6 @@
-import ContactUs from "@/app/components/Contact/ContactUs"
+import ServiceBox from "@/app/components/Contact/ServiceBox";
 import { services, Services } from "@/app/components/Services/data/service"
+
 
 function addSpaceAfterFourLines(content: string) {
   // Split the content into an array of lines
@@ -40,8 +41,14 @@ const Page = ({ params }: { params: Services })  => {
     const modifiedContent = addSpaceAfterFourLines(description)
 
     return (
-      <>
-  
+      <main className="pt-[6.46rem] md:pt-[7.3rem]">
+        <div
+        className="relative flex h-96 items-center justify-center bg-cover bg-center px-4"
+        style={{
+          backgroundImage: `url(${service.image})`,
+        }}
+      >{title}</div>
+
         <div className="bg-[#FAFAFA] mb-10 h-20">
           <h3 className="pl-20 font-bold pt-5">Service: <span className="font-normal">{title}</span></h3>
         </div>
@@ -50,8 +57,8 @@ const Page = ({ params }: { params: Services })  => {
           { modifiedContent }
         </section>
 
-        <ContactUs />
-      </>
+        <ServiceBox />
+      </main>
     );
   }
 

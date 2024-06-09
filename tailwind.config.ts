@@ -62,6 +62,9 @@ module.exports = {
         stroke: '#E3E8EF',
         'stroke-dark': '#353943',
         'bg-color-dark': '#171C28',
+        anotherGray: "#717171",
+        anotherBlack: "#000528",
+        anotherwhite: "#F4F4F4"
 
       },
 

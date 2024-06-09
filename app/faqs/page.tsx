@@ -2,7 +2,7 @@ import React from "react";
 import ArrowUp from "@/public/images/landingpage/ArrowUp.svg";
 import ArrowDown from "@/public/images/landingpage/ArrowDown.svg";
 import Image from "next/image";
-import ContactUs from "../components/Contact/ContactUs";
+import ServiceBox from "../components/Contact/ServiceBox";
 
 function page() {
   return (
@@ -19,7 +19,7 @@ function page() {
         </div>
 
         {/* Faqs Body section */}
-        <section className="py-12 md:py-20 md:wrapper mx-[3rem]">
+        <section className="py-12 md:py-20 md:wrapper mx-[2rem]">
           <div className="flex flex-col justify-center items-center">
             <h1 className="font-semibold text-xl md:text-3xl text-customSecondary">
               Frequently Asked Questions
@@ -89,7 +89,7 @@ function page() {
             Can’t Find the answer you are looking for? Please contact us.{" "}
           </p>
         </div>
-        <ContactUs/>
+        <ServiceBox/>
       </main>
     </div>
   );

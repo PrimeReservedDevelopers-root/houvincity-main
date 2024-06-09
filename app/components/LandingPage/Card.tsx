@@ -6,7 +6,7 @@ import Icon from "@/public/images/landingpage/Vector.svg";
 function Card() {
   return (
     <div className="">
-      <div className="wrapper mt-[3rem] mb-[5rem]">
+      <div className="mx-5 md:mx-10  mt-[3rem] mb-[5rem]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-[5rem] ">
           {/* Display filteredProperties */}
           <div>

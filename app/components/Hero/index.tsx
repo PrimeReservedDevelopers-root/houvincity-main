@@ -4,16 +4,17 @@ import IconButtonHref from '../Buttons/IconButtonHref';
 import SearchHomePage from '../Search/SearchHomePage';
 import SearchOther from '../Search/SearchOther';
 
+
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-center bg-cover mt-28 md:mt-[7.3rem] py-20 md:py-28">
+    <section className="relative w-full overflow-hidden bg-center bg-cover mt-[6.4rem] md:mt-[7.3rem] py-20 md:py-28">
       {/* Background Image */}
       <Image
-        src="/images/banners/real estate blog 2.jpg"
+        src="/images/banners/Rectangle 23803.svg"
         alt="Hero Image"
         layout="fill"
         objectFit="cover"
-        className="absolute inset-0"
+        className="absolute inset-0  bg-top  "
       />
 
       {/* Overlay */}
